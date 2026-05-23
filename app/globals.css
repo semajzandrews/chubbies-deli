@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Chubbies Deli · NYC bodega awning + hand-painted signage */
+@theme {
+  --color-tile:      #FFFCEC;     /* deli-tile cream */
+  --color-tile-2:    #F4EAD0;
+  --color-mustard:   #F0B414;
+  --color-tomato:    #C43A2C;
+  --color-olive:     #4F6B26;
+  --color-pickle:    #6B8C2E;
+  --color-charcoal:  #221C13;
+  --color-graphite:  #5A4E36;
+  --color-rule:      #D8C99A;
+  --color-rule-2:    #A8945F;
+
+  --font-display: "Alfa Slab One", Georgia, ui-serif, serif;
+  --font-chalk:   "Caveat", cursive;
+  --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --tile:#FFFCEC; --tile-2:#F4EAD0;
+    --mustard:#F0B414; --tomato:#C43A2C;
+    --olive:#4F6B26; --pickle:#6B8C2E;
+    --charcoal:#221C13; --graphite:#5A4E36;
+    --rule:#D8C99A; --rule-2:#A8945F;
+  }
+  html, body {
+    background: var(--tile);
+    color: var(--charcoal);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--tomato); color: var(--tile); }
+}
+
+/* Awning stripes */
+.awning {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--tomato) 0 32px,
+    var(--tile) 32px 64px
+  );
+}
+
+/* Chalk board */
+.chalkboard {
+  background: #1A1410;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1.5px);
+  background-size: 3px 3px, 7px 7px;
+}
+
+/* Stamp ink */
+.stamp-ink {
+  position: relative;
+}
+.stamp-ink::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.13) 1px, transparent 1.5px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+.wave { animation: wave 4s ease-in-out infinite; }
+
+.tabnum { font-variant-numeric: tabular-nums; }
+.font-display { font-family: var(--font-display); font-weight: 400; }
+.font-chalk { font-family: var(--font-chalk); font-weight: 700; }
