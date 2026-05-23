@@ -9,7 +9,7 @@ export default function Footer() {
           Monday through Saturday. Closed Sundays — go to church.
         </p>
         <div className="mt-10 font-display text-[10px] uppercase tracking-[0.32em] text-tile/50">
-          © {new Date().getFullYear()} · Chubbies Deli · Central Ave · Orange, NJ · built · bysemaj.com
+          © {new Date().getFullYear()} · Chubbies Deli · Central Ave · Orange, NJ · <a href="https://bysemaj.com" target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline transition-opacity hover:opacity-80">built · bysemaj.com</a>
         </div>
       </div>
     </footer>
