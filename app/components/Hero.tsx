@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-[100svh] flex flex-col">
+    <section id="top" className="relative min-h-[100svh] flex flex-col pt-16">
       {/* Awning band at the top */}
       <div className="h-8 awning border-b-4 border-charcoal" />
 

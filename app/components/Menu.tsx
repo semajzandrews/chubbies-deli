@@ -36,7 +36,7 @@ function Section({ id, title, items, accent }: { id: string; title: string; item
         <ul className="space-y-5">
           {items.map((it, i) => (
             <motion.li key={it.n} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.5, delay: i*0.04 }} className="flex items-baseline gap-4">
-              <span className="font-display text-2xl uppercase whitespace-nowrap">{it.n}</span>
+              <span className="font-display text-2xl uppercase whitespace-normal md:whitespace-nowrap">{it.n}</span>
               <span className="hidden md:inline-block flex-1 border-b border-dashed border-current/30 translate-y-[-4px]"/>
               <span className="hidden md:inline text-sm opacity-70 italic">{it.ing}</span>
               <span className="font-display text-3xl tabnum ml-auto md:ml-4">${it.p}</span>
