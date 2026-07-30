@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Menu from "./components/Menu";
 import Visit from "./components/Visit";
 import Footer from "./components/Footer";
+import CounterTicket from "./components/CounterTicket";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
         <Visit />
       </main>
       <Footer />
+      <CounterTicket />
     </>
   );
 }
