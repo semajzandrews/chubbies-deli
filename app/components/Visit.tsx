@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { CallOrTextPair } from "./CallOrText";
 
 export default function Visit() {
   return (
@@ -28,9 +29,7 @@ export default function Visit() {
         </div>
 
         <div className="mt-12">
-          <a href="tel:" className="bg-charcoal text-tile px-10 py-5 font-display text-xl uppercase hover:bg-tomato transition-colors inline-flex items-center gap-3">
-            Call & order →
-          </a>
+          <CallOrTextPair />
         </div>
       </div>
       <div className="h-6 awning border-y-4 border-charcoal mt-12"/>

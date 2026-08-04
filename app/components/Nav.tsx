@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import CallOrText from "./CallOrText";
 
 const LINKS = [
   { label: "Heroes", href: "#heroes" },
@@ -26,9 +27,7 @@ export default function Nav() {
             <a key={l.href} href={l.href} className="font-display text-base text-charcoal hover:text-tomato transition-colors">{l.label}</a>
           ))}
         </nav>
-        <a href="tel:" className="group inline-flex items-center gap-2 bg-mustard px-5 py-2.5 font-display text-sm text-charcoal hover:bg-tomato hover:text-tile transition-colors">
-          Call & order
-        </a>
+        <CallOrText tone="mustard" label="Call & order" />
       </div>
     </header>
   );

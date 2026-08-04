@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import CallOrText from "./CallOrText";
 
 // Layout grammar: super-tall hero with stacked chalkboard menu below.
 // Heavy slab type + handwritten chalk script accent.
@@ -29,9 +30,7 @@ export default function Hero() {
               <a href="#heroes" className="bg-tomato text-tile px-8 py-4 font-display text-lg uppercase hover:bg-charcoal transition-colors">
                 SEE HEROES →
               </a>
-              <a href="tel:" className="border-2 border-charcoal text-charcoal px-8 py-4 font-display text-lg uppercase hover:bg-mustard transition-colors">
-                CALL AHEAD
-              </a>
+              <CallOrText tone="outline" label="Call ahead" size="lg" />
             </motion.div>
           </div>
 

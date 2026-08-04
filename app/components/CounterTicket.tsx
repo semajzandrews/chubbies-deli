@@ -21,14 +21,15 @@
  * A 6 AM deli is a before-work deli, so the slot list starts at 6 and Sunday
  * is not offerable.
  *
- * NOTE FOR THE BUILD OWNER: Nav.tsx and Visit.tsx both ship `href="tel:"` with
- * no number, so the site's own call buttons currently do nothing. Not fixed here
- * (out of scope for this component) but it needs the real number.
+ * The site's call buttons are the shared CallOrText chooser (Nav/Hero/Visit),
+ * wired to the real line in app/lib/site.ts. The mask below is the same
+ * formatter that renders that number, so the ticket and the page never drift.
  *
  * All prices read from Menu.tsx. Static export: nothing is charged.
  */
 
 import { useEffect, useMemo, useState } from "react";
+import { formatAsYouType as formatPhone, isCompletePhone as isPhoneComplete } from "@/app/lib/phone";
 
 
 
@@ -39,14 +40,6 @@ import { useEffect, useMemo, useState } from "react";
  * the submit gate uses. Non-digits are dropped rather than rejected, so paste
  * of "973-555-0123" or "+1 973 555 0123" still lands correctly.
  */
-export function formatPhone(input: string): string {
-  const d = input.replace(/\D/g, "").replace(/^1(?=\d{10})/, "").slice(0, 10);
-  if (d.length === 0) return "";
-  if (d.length <= 3) return `(${d}`;
-  if (d.length <= 6) return `(${d.slice(0, 3)}) ${d.slice(3)}`;
-  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
-}
-export const isPhoneComplete = (v: string) => v.replace(/\D/g, "").length === 10;
 
 type Item = { id: string; n: string; ing: string; p: number; sect: string };
 
